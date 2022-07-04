@@ -1,0 +1,13 @@
+<div class="card">
+
+<h1>Login</h1>
+<p>username</p>
+<input type="text" name="" value="" #name>
+<p>password</p>
+<input type="text" name="" value="" #p>
+<br>
+<p *ngIf="errorMessage" class="error">{{errorMessage}}</p>
+<br>
+<button type="button" name="button" class="btn default" (click)="generateToken(name.value, p.value)">log in</button>
+
+</div>

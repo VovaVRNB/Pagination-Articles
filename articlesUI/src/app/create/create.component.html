@@ -1,0 +1,14 @@
+<h3>Create an Article</h3>
+<div class="container">
+
+    <label for="fname">Title</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your title.." #title>
+    <p *ngIf="errorMessage" class="error">{{errorMessage}}</p>
+
+    <label for="subject">Context</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" #p></textarea>
+
+    <button type="submit" name="button" (click)="createArt(title.value, p.value)">CREATE</button>
+    <button type="button" name="button" class="btn default" (click)="return()">CANCEL</button>
+
+</div>

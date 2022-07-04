@@ -1,0 +1,21 @@
+<button type="button" name="button" class="btn default" (click)="loguot()">Log out</button>
+<button type="button" name="button" class="btn default" (click)="statistic()">Statistic</button>
+<button type="button" name="button" class="btn default" (click)="create()">Create Article</button>
+
+<div class="card text-center m-3">
+    <h3 class="card-header">Articles</h3>
+    <div class="card-body">
+        <div class="card" *ngFor="let item of items">
+          <h2>{{item.title}}</h2>
+          <div class="content">
+            {{item.content}}
+          </div>
+          <h4>{{item.user.name}} <br>Role : {{item.user.role.name}}</h4>
+          <div class="date">
+            {{item.date}}
+          </div>
+        </div>
+    </div>
+
+    <button class="button button1" *ngFor="let i of pageOfItems" (click)="getAll(i)">{{i}}</button>
+</div>

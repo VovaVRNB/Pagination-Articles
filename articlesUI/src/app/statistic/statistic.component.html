@@ -1,0 +1,31 @@
+<button type="button" name="button" class="btn default" (click)="return()">Back</button>
+
+<div class="container">
+
+    <label for="fname">Choose Date</label>
+    <input type="text" id="fname" name="firstname" value="2022-07-03" #date>
+
+    <label for="fname">Choose Time</label>
+    <input type="text" id="fname" name="firstname" value="20:00" #time>
+
+    <button type="submit" name="button" (click)="getAllByDate(1, date.value, time.value)">FIND</button>
+    <p *ngIf="errorMessage" class="error">{{errorMessage}}</p>
+</div>
+
+<div class="card text-center m-3">
+    <h3 class="card-header">Articles</h3>
+    <div class="card-body">
+        <div class="card" *ngFor="let item of items">
+          <h2>{{item.title}}</h2>
+          <div class="content">
+            {{item.content}}
+          </div>
+          <h4>{{item.user.name}} <br>Role : {{item.user.role.name}}</h4>
+          <div class="date">
+            {{item.date}}
+          </div>
+        </div>
+    </div>
+
+    <button class="button button1" *ngFor="let i of pageOfItems" (click)="getAllByDate(i, date.value, time.value)">{{i}}</button>
+</div>
